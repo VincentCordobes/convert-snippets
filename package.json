@@ -1,0 +1,20 @@
+{
+  "name": "convert-snippets",
+  "version": "1.0.0",
+  "description": "convert back and forth snippets between ultinips and vscode",
+  "main": "cli.js",
+  "author": "Vincent CORDOBES",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --watch",
+    "lint": "eslint src"
+  },
+  "bin": {
+    "convert-snippets": "./src/cli.js"
+  },
+  "devDependencies": {
+    "eslint": "^5.6.0",
+    "jest": "^23.6.0",
+    "rimraf": "^2.6.2"
+  }
+}

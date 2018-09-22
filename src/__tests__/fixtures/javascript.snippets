@@ -1,0 +1,161 @@
+snippet fun "function"
+function ${1:name}(${2:params}) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet afun
+async function ${1:name}(${2:params}) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet c=> "arrow function"
+const ${1:name} = (${2:params}) => {
+	${0:${VISUAL}}
+}
+endsnippet
+
+
+snippet //*
+/**
+ * ${0:description}
+ *
+ */
+endsnippet
+
+snippet ed
+export default ${0}
+endsnippet
+
+
+snippet desc 
+describe('${1}', () => {
+	test('${2}', () => {
+		${3}
+	})
+})
+endsnippet
+
+snippet givenwhen
+// given
+${1}
+// when
+${2}
+// then
+${0}
+endsnippet
+
+snippet it "it (js)"
+it('${1:description}', () => {
+	$0
+})
+endsnippet
+
+
+snippet ttodo 
+// TODO: ${0}
+throw new Error('TODO: $0')
+endsnippet
+
+snippet cl 
+console.log(${0})
+endsnippet
+
+snippet cls 
+console.log('${1} = ', JSON.stringify($1, null, 5))
+endsnippet
+
+
+snippet logi
+logger.info(`${1}`)
+endsnippet
+
+snippet switchf 
+switch (${1}) {
+	case '${2}':
+	default: {
+		// eslint-disable-next-line no-unused-vars
+		const typeCheck: '${3}' = $1;
+	}
+}
+endsnippet
+
+
+snippet eslintnl
+// eslint-disable-next-line $1
+endsnippet
+
+
+
+#######################################"
+# React stuff
+#######################################"
+
+snippet <
+<${1:tag}>
+	${0}
+</$1>
+endsnippet
+
+
+snippet re
+const ${1} = require('${2:$1}')
+endsnippet
+
+snippet dob
+const { ${2} } = ${1}
+endsnippet
+
+snippet dar
+const [${2}] = ${1}
+endsnippet
+
+snippet im
+import ${1} from '${2:$1}'
+endsnippet
+
+snippet imm
+import { ${2} } from '${1}'
+endsnippet
+
+snippet sst
+this.setState({
+	${1}: ${2}
+})
+endsnippet
+
+snippet ssf
+this.setState(state => ${1})
+endsnippet
+
+
+snippet rcon
+constructor(props) {
+	super(props)
+
+	this.state = {
+		${1}: ${0},
+	}
+}
+endsnippet
+
+
+snippet rcc
+class ${1:ClassName} extends React.Component {
+	render() {
+		return (
+			${0:<div />}
+		)
+	}
+}
+endsnippet
+
+snippet ren
+render() {
+	return (
+		${1:<div />}
+	)
+}
+endsnippet
+
