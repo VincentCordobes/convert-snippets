@@ -2,7 +2,7 @@
   "name": "convert-snippets",
   "version": "1.0.0",
   "description": "convert back and forth snippets between ultinips and vscode",
-  "main": "cli.js",
+  "main": "generate.js",
   "author": "Vincent CORDOBES",
   "license": "MIT",
   "scripts": {

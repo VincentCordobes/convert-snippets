@@ -1,0 +1,11 @@
+{
+  "withDescription": {
+    "prefix": "withDescription",
+    "body": "function ${1:name}(${2:params}) {\n\t$0\n}",
+    "description": "function"
+  },
+  "withoutDescription": {
+    "prefix": "withoutDescription",
+    "body": "async function ${1:name}(${2:params}) {\n\t$0\n}"
+  }
+}
