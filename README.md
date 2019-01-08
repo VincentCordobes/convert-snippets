@@ -11,7 +11,7 @@ npm i -g convert-snippets
 ## Usage
 
 ```
-convert-snippet source_file target_file
+convert-snippets source_file target_file
 ```
 
 Automatically detects `source_file` format and generates `target_file`
