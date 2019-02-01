@@ -1,4 +1,4 @@
-const VIM_SNIPPET = /^snippet ([^\s]*)\s*(?:"(.*?)")?\n((?:.|\n)*?)\nendsnippet$/gm
+const VIM_SNIPPET = /^snippet ([^\s]*)\s*(?:"(.*?)".*)?\n((?:.|\n)*?)\nendsnippet$/gm
 
 function parse(rawSnippets) {
   let res
@@ -9,7 +9,9 @@ function parse(rawSnippets) {
     snippets[prefix] = {
       prefix,
       body: normalizePlaceholders(body),
-      ...(description ? { description } : {}),
+    }
+    if (description) {
+      snippets[prefix].description = description
     }
   }
   return snippets

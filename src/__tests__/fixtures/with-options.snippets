@@ -1,0 +1,48 @@
+snippet lvalidator "参数检验"
+$validator = Validator::make($${1:request->all()}, [
+${2}
+]);
+if ($validator->fails()) {
+return $this->${3:response->}error($validator->errors()->first(), 422);
+}
+endsnippet
+
+snippet luserid "当前用户ID" i
+$this${1:->auth}->user()->id${0}
+endsnippet
+
+snippet lreturn "返回JSON" b
+return $this->${1:response->}success(${2});${0}
+endsnippet
+
+snippet lfail "返回错误响应" i
+return $this->${1:response->}error(${2}, ${3:500});${0}
+endsnippet
+
+snippet lerr "Log::error()" b
+Log::error('${1}'${2:.json_encode(${3:$request->all()})});${0}
+endsnippet
+
+snippet lctbl "migration: create table" b
+Schema::create('${1:users}', function (Blueprint $table) {
+${2:$table->increments('id')->comment('ID');}${0}
+});
+endsnippet
+
+snippet ltbl "migration: alter table" b
+Schema::table('${1:users}', function (Blueprint $table) {
+${2}
+});${0}
+endsnippet
+
+snippet lstring "migration: table->string()" b
+$table->string('${1:email}', ${2:50})${3:->nullable()}->comment('${4:电邮}');${0}
+endsnippet
+
+snippet lint "migration: table->integer()" b
+$table->integer('${1:age}')${3:->nullable()}${4:->default(${5:0})}->comment('${6:年龄}');${0}
+endsnippet
+
+snippet luint "migration: table->unsignedInteger()" b
+$table->unsignedInteger('${1:age}')${3:->nullable()}${4:->default(${5:0})}->comment('${6:年龄}');${0}
+endsnippet
