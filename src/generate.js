@@ -26,10 +26,10 @@ function jsonToUltisnips(json) {
 
 function toUltisnips(snippet) {
   // prettier-ignore
-  return `
-snippet ${snippet.prefix} ${snippet.description ? `"${snippet.description}"` : ''}
+  return `snippet ${snippet.prefix}${snippet.description ? ` "${snippet.description}"` : ''}
 ${snippet.body}
-endsnippet`
+endsnippet
+`
 }
 
 module.exports = {

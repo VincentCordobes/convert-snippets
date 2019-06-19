@@ -30,6 +30,24 @@ test('Should parse vscode and generate a valid ultisnips file', () => {
   // given
   const inputFile = path.join(__dirname, './fixtures/snippets.json')
   const outputFile = path.join(tmpPath, 'output.snippets')
+
+  // when
+  generate(inputFile, outputFile)
+
+  // then
+  const ultisnips = fs.readFileSync(outputFile, 'utf8')
+  expect(ultisnips).toBe(
+    fs.readFileSync(
+      path.join(__dirname, './fixtures/snippets-description.snippets'),
+      'utf8'
+    )
+  )
+})
+
+test('Should be unchanged when we json -> ultisnips and ultisnips -> json', () => {
+  // given
+  const inputFile = path.join(__dirname, './fixtures/snippets.json')
+  const outputFile = path.join(tmpPath, 'output.snippets')
   const expectedOriginalInput = path.join(tmpPath, 'expectedOriginalInput.json')
 
   // when
