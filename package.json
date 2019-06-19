@@ -8,7 +8,9 @@
   "scripts": {
     "test": "jest --watch",
     "test:coverage": "jest --coverage",
-    "lint": "eslint src"
+    "format": "prettier --write ./src/**",
+    "format:check": "prettier --check ./src/**",
+    "lint": "eslint src && yarn format:check"
   },
   "bin": {
     "convert-snippets": "./src/cli.js"
