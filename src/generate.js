@@ -25,9 +25,12 @@ function jsonToUltisnips(json) {
 }
 
 function toUltisnips(snippet) {
+  const body = Array.isArray(snippet.body)
+    ? snippet.body.join('\n')
+    : snippet.body
   // prettier-ignore
   return `snippet ${snippet.prefix}${snippet.description ? ` "${snippet.description}"` : ''}
-${snippet.body}
+${body}
 endsnippet
 `
 }

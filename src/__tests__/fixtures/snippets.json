@@ -7,5 +7,9 @@
   "withoutDescription": {
     "prefix": "withoutDescription",
     "body": "async function ${1:name}(${2:params}) {\n\t$0\n}"
+  },
+  "multilineBody": {
+    "prefix": "multilineBody",
+    "body": ["function ${1:name}(${2:params}) {", "\t$0", "}"]
   }
 }
