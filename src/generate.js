@@ -25,11 +25,17 @@ function jsonToUltisnips(json) {
 }
 
 function toUltisnips(snippet) {
-  const body = Array.isArray(snippet.body)
+  let body = Array.isArray(snippet.body)
     ? snippet.body.join('\n')
     : snippet.body
+
+  body = body
+    .replace(/\\}/g, '}')
+    .replace(/\\\$/g, '$')
+    .replace(/\\\\/, '\\')
+
   // prettier-ignore
-  return `snippet ${snippet.prefix}${snippet.description ? ` "${snippet.description}"` : ''}
+  return `snippet "${snippet.prefix}"${snippet.description ? ` "${snippet.description}"` : ''}
 ${body}
 endsnippet
 `

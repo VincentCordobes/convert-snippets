@@ -1,17 +1,23 @@
-snippet withDescription "function"
+snippet "withDescription" "function"
 function ${1:name}(${2:params}) {
 	$0
 }
 endsnippet
 
-snippet withoutDescription
+snippet "withoutDescription"
 async function ${1:name}(${2:params}) {
 	$0
 }
 endsnippet
 
-snippet multilineBody
+snippet "multilineBody"
 function ${1:name}(${2:params}) {
 	$0
 }
+endsnippet
+
+snippet "withSpecialSymbols"
+$
+}
+\
 endsnippet
