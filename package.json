@@ -1,6 +1,6 @@
 {
   "name": "convert-snippets",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "convert back and forth snippets between ultinips and vscode",
   "main": "generate.js",
   "author": "Vincent CORDOBES",
