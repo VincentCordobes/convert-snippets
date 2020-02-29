@@ -51,6 +51,20 @@ test('Format snippet with options (issue#2)', () => {
   expect(Object.keys(snippets)).toHaveLength(10)
 })
 
+test('Parse snippets with a multi-word prefix', () => {
+  // given
+  const snippetStr = loadSnippet('multi-word-prefix')
+  // when
+  const snippets = parse(snippetStr)
+  // then
+  expect(snippets).toEqual({
+    'multi-word prefix': {
+      prefix: 'multi-word prefix',
+      body: 'This is cool',
+    },
+  })
+})
+
 function loadSnippet(name) {
   return fs.readFileSync(
     path.join(__dirname, `./fixtures/${name}.snippets`),

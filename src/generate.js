@@ -29,10 +29,28 @@ function toUltisnips(snippet) {
     ? snippet.body.join('\n')
     : snippet.body
   // prettier-ignore
-  return `snippet ${snippet.prefix}${snippet.description ? ` "${snippet.description}"` : ''}
-${body}
+  return `snippet ${formatPrefix(snippet.prefix)}${snippet.description ? ` "${snippet.description}"` : ''}
+${formatBody(body)}
 endsnippet
 `
+}
+
+/**
+ * @param {string} prefix
+ */
+function formatPrefix(prefix) {
+  const isMultiWord = prefix.split(' ').length > 1
+  return isMultiWord ? `"${prefix}"` : prefix
+}
+
+/**
+ * @param {string} body
+ */
+function formatBody(body) {
+  return body
+    .replace(/\\}/g, '}')
+    .replace(/\\\$/g, '$')
+    .replace(/\\\\/, '\\')
 }
 
 module.exports = {

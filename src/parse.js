@@ -1,11 +1,12 @@
-const VIM_SNIPPET = /^snippet ([^\s]*)\s*(?:"(.*?)".*)?\n((?:.|\n)*?)\nendsnippet$/gm
+const VIM_SNIPPET = /^snippet (?:"([\w\s-]+)"|([^\s]+))\s*(?:"(.*?)".*)?\n((?:.|\n)*?)\nendsnippet$/gm
 
 function parse(rawSnippets) {
   let res
   let snippets = {}
   while ((res = VIM_SNIPPET.exec(rawSnippets)) !== null) {
     //eslint-disable-next-line no-unused-vars
-    const [_, prefix, description, body] = res
+    const [_, multiWordPrefix, singleWordPrefix, description, body] = res
+    const prefix = multiWordPrefix || singleWordPrefix
     snippets[prefix] = {
       prefix,
       body: normalizePlaceholders(body),

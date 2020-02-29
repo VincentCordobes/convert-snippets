@@ -11,5 +11,13 @@
   "multilineBody": {
     "prefix": "multilineBody",
     "body": ["function ${1:name}(${2:params}) {", "\t$0", "}"]
+  },
+  "withSpecialSymbols": {
+    "prefix": "withSpecialSymbols",
+    "body": ["\\$", "\\}", "\\\\"]
+  },
+  "multi-word prefix": {
+    "prefix": "multi-word prefix",
+    "body": "This is cool" 
   }
 }

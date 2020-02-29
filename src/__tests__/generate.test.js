@@ -38,7 +38,7 @@ test('Should parse vscode and generate a valid ultisnips file', () => {
   const ultisnips = fs.readFileSync(outputFile, 'utf8')
   expect(ultisnips).toBe(
     fs.readFileSync(
-      path.join(__dirname, './fixtures/snippets-description.snippets'),
+      path.join(__dirname, './fixtures/snippets.snippets'),
       'utf8'
     )
   )
