@@ -16,7 +16,7 @@ test('Should parse Ultisnips and generate vscode snippet file', () => {
   generate(inputFile, outputFile)
 
   // then
-  fromJSON(outputFile).forEach(snippet =>
+  fromJSON(outputFile).forEach((snippet) =>
     expect(snippet).toEqual(
       expect.objectContaining({
         prefix: expect.any(String),
@@ -55,7 +55,7 @@ test('Should be unchanged when we json -> ultisnips and ultisnips -> json', () =
   generate(outputFile, expectedOriginalInput)
 
   // then
-  fromJSON(expectedOriginalInput).forEach(snippet =>
+  fromJSON(expectedOriginalInput).forEach((snippet) =>
     expect(snippet).toEqual(
       expect.objectContaining({
         prefix: expect.any(String),

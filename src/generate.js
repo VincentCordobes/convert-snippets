@@ -47,10 +47,7 @@ function formatPrefix(prefix) {
  * @param {string} body
  */
 function formatBody(body) {
-  return body
-    .replace(/\\}/g, '}')
-    .replace(/\\\$/g, '$')
-    .replace(/\\\\/, '\\')
+  return body.replace(/\\}/g, '}').replace(/\\\$/g, '$').replace(/\\\\/, '\\')
 }
 
 module.exports = {
