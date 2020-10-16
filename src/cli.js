@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const { generate } = require('./generate')
+const logger = require('./logger')
 
 cli()
 
@@ -16,4 +17,5 @@ function cli() {
   }
 
   generate(sourceFile, targetFile)
+  logger.info('✨ Done')
 }

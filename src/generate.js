@@ -1,5 +1,6 @@
 const fs = require('fs')
 const { parse } = require('./parse')
+const logger = require('./logger')
 
 function generate(input, output) {
   const source = fs.readFileSync(input)
@@ -38,7 +39,15 @@ endsnippet
 /**
  * @param {string} prefix
  */
-function formatPrefix(prefix) {
+function formatPrefix(prefixOrPrefixes) {
+  let prefix
+
+  if (Array.isArray(prefixOrPrefixes)) {
+    prefix = prefixOrPrefixes[0]
+    logger.warn(`Unsupported multiple prefixes =>  using pefix "${prefix}"`)
+  } else {
+    prefix = prefixOrPrefixes
+  }
   const isMultiWord = prefix.split(' ').length > 1
   return isMultiWord ? `"${prefix}"` : prefix
 }

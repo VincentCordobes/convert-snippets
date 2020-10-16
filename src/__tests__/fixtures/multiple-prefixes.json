@@ -1,0 +1,6 @@
+{
+  "multi-prefix": {
+    "prefix": ["first-prefix", "second-prefix"],
+    "body": "lorem ipsum"
+  }
+}

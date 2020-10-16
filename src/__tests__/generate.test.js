@@ -65,6 +65,19 @@ test('Should be unchanged when we json -> ultisnips and ultisnips -> json', () =
   )
 })
 
+test('Should handle vscode multiple prefixes', () => {
+  const inputFile = path.join(__dirname, './fixtures/multiple-prefixes.json')
+  const outputFile = path.join(tmpPath, 'output.snippets')
+
+  generate(inputFile, outputFile)
+  const ultisnips = fs.readFileSync(outputFile, 'utf8')
+  console.log(ultisnips)
+  expect(ultisnips).toBe(`snippet first-prefix
+lorem ipsum
+endsnippet
+`)
+})
+
 function fromJSON(path) {
   return Object.values(JSON.parse(fs.readFileSync(path)))
 }
