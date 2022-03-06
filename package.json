@@ -16,8 +16,8 @@
     "convert-snippets": "./src/cli.js"
   },
   "devDependencies": {
-    "eslint": "^7.10.0",
-    "jest": "^26.5.2",
+    "eslint": "^8.10.0",
+    "jest": "^27.5.1",
     "prettier": "^2.1.2",
     "rimraf": "^3.0.2"
   }
