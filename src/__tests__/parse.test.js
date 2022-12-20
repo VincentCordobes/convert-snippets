@@ -11,10 +11,14 @@ test('Format special placeholder', () => {
 
   // then
   expect(snippets).toEqual({
-    fun: {
-      prefix: 'fun',
-      body: 'function ${1:name}(${2:params}) {\n\t$0\n}',
-    },
+    "fun": {
+      "prefix": "fun",
+      "body": [
+        "function ${1:name}(${2:params}) {",
+        "\t$0",
+        "}"
+      ]
+    }
   })
 })
 
@@ -27,15 +31,23 @@ test('Format multiple snippets', () => {
 
   // then
   expect(snippets).toEqual({
-    fun: {
-      prefix: 'fun',
-      body: 'function ${1:name}(${2:params}) {\n\t$0\n}',
-      description: 'function',
+    "fun": {
+      "prefix": "fun",
+      "body": [
+        "function ${1:name}(${2:params}) {",
+        "\t$0",
+        "}"
+      ],
+      "description": "function"
     },
-    'c=>': {
-      prefix: 'c=>',
-      body: 'const ${1:name} = (${2:params}) => {\n\t$0\n}',
-      description: 'arrow function',
+    "c=>": {
+      "prefix": "c=>",
+      "body": [
+        "const ${1:name} = (${2:params}) => {",
+        "\t$0",
+        "}"
+      ],
+      "description": "arrow function"
     },
   })
 })
@@ -58,10 +70,12 @@ test('Parse snippets with a multi-word prefix', () => {
   const snippets = parse(snippetStr)
   // then
   expect(snippets).toEqual({
-    'multi-word prefix': {
-      prefix: 'multi-word prefix',
-      body: 'This is cool',
-    },
+    "multi-word prefix": {
+      "prefix": "multi-word prefix",
+      "body": [
+        "This is cool"
+      ]
+    }
   })
 })
 
