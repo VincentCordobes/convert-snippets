@@ -9,7 +9,7 @@ function parse(rawSnippets) {
     const prefix = multiWordPrefix || singleWordPrefix
     snippets[prefix] = {
       prefix,
-      body: normalizePlaceholders(body),
+      body: normalizePlaceholders(body).split("\n"),
     }
     if (description) {
       snippets[prefix].description = description
