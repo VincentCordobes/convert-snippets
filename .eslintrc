@@ -12,8 +12,6 @@
   },
   "rules": {
     "indent": ["error", 2],
-    "no-console": "off",
-    "quotes": ["error", "single"],
-    "semi": ["error", "never"]
+    "no-console": "off"
   }
 }
